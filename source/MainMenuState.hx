@@ -141,6 +141,7 @@ class MainMenuState extends MusicBeatState
 
 			if (BACK || FlxG.android.justReleased.BACK)
 			{
+				//FlxG.switchState(new ChangePlayerState());
 				FlxG.switchState(new TitleState());
 			}
 

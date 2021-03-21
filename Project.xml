@@ -2,7 +2,7 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="Friday Night Funkin'" file="Funkin" packageName="com.ninjamuffin99.funkin" package="com.ninjamuffin99.funkin" main="Main" version="0.2.7.1" company="ninjamuffin99" />
+	<app title="Friday Night Funkin' Minus" file="Funkin" packageName="com.ninjamuffin99.funkinminus" package="com.ninjamuffin99.funkin" main="Main" version="0.2.7.1" company="ninjamuffin99" />
 
 	<!--Switch Export with Unique ApplicationID and Icon-->
 	<set name="APP_ID" value="0x0100f6c013bbc000" />
@@ -41,6 +41,8 @@
 	<classpath name="source" />
 
 	<classpath name="source/options" />
+
+	<assets path="assets/preload/images/charSelect"/>
 
 
 	<assets path="assets/preload" rename="assets" exclude="*.ogg" if="web"/>
@@ -165,9 +167,6 @@
 
 	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
 	
-	<icon path="art/icon16.png" size='16'/>
-	<icon path="art/icon32.png" size='32'/>
-	<icon path="art/icon64.png" size='64'/>
 	<icon path="art/iconOG.png" />
 
 

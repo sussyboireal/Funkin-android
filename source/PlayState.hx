@@ -54,6 +54,8 @@ class PlayState extends MusicBeatState
 	public static var storyPlaylist:Array<String> = [];
 	public static var storyDifficulty:Int = 1;
 
+	public static var bfsel:Int = 0;
+
 	var halloweenLevel:Bool = false;
 
 	private var vocals:FlxSound;
@@ -607,7 +609,20 @@ class PlayState extends MusicBeatState
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 		}
 
-		boyfriend = new Boyfriend(770, 450, SONG.player1);
+		switch bfsel{
+			case 0:
+				boyfriend = new Boyfriend(770, 450, SONG.player1);
+				trace("beta!");
+			case 1:
+				boyfriend = new Boyfriend(770, 450, SONG.player1 + '-blue');
+				trace("blue!");
+			case 2:
+				boyfriend = new Boyfriend(770, 450, SONG.player1 + '-mean');
+				trace("mean!");
+			default:
+				trace("default!");
+				boyfriend = new Boyfriend(770, 450, SONG.player1);
+		}
 
 		// REPOSITIONING PER STAGE
 		switch (curStage)
