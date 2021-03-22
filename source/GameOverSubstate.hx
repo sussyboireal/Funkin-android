@@ -30,7 +30,7 @@ class GameOverSubstate extends MusicBeatSubstate
 				stageSuffix = '-pixel';
 				daBf = 'bf-pixel-dead';
 			default:
-				daBf = 'bf';
+				daBf = bfchange();
 		}
 
 		super();
@@ -56,6 +56,19 @@ class GameOverSubstate extends MusicBeatSubstate
 		_pad = new FlxVirtualPad(NONE, A_B);
     	_pad.alpha = 0.75;
     	this.add(_pad);
+	}
+
+	function bfchange(){
+		switch PlayState.bfsel{
+			case 0:
+				return 'bf';
+			case 1:
+				return 'bf-blue';
+			case 2:
+				return 'bf-mean';
+			default:
+				return 'bf';
+		}
 	}
 
 	override function update(elapsed:Float)

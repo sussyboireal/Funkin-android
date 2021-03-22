@@ -14,6 +14,7 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.net.curl.CURLCode;
 import flixel.ui.FlxVirtualPad;
+import flixel.effects.FlxFlicker;
 
 using StringTools;
 
@@ -154,9 +155,18 @@ class ChangePlayerState extends MusicBeatState
 			
 			selected = true;
 			PlayState.bfsel = curSelected;
+
 			
-			LoadingState.loadAndSwitchState(new PlayState());
-		}
+			FlxG.sound.play(Paths.sound('confirmMenu'));
+
+			FlxFlicker.flicker(characters, 1.1, 0.04);
+
+			new FlxTimer().start(1, function(tmr:FlxTimer)
+			{
+				LoadingState.loadAndSwitchState(new PlayState());
+			});		
+		
+	}
 
 
 		for (touch in FlxG.touches.list){
